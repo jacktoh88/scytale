@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Isrc/ciphers
 
-SRCS = src/scytale.c
+SRCS = src/scytale.c src/ciphers/ciphers.c src/ciphers/caesar.c
 OBJS = $(SRCS:.c=.o)
 
 

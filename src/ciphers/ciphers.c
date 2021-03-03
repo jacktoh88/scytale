@@ -4,7 +4,7 @@
 
 bool encrypt(cipher_t *cipher){
     if(!strcmp(cipher->name, "Caesar")){
-
+        return encrypt_casear(cipher);
     }
     else if(!strcmp(cipher->name, "Polybius")){
 
@@ -19,7 +19,7 @@ bool encrypt(cipher_t *cipher){
 
 bool decrypt(cipher_t *cipher){
     if(!strcmp(cipher->name, "Caesar")){
-
+        return decrypt_caesar(cipher);
     }
     else if(!strcmp(cipher->name, "Polybius")){
 
