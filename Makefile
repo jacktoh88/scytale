@@ -1,6 +1,6 @@
 
 CC = gcc
-CFLAGS = -Iciphers/
+CFLAGS = -Isrc/ciphers
 
 SRCS = src/scytale.c
 OBJS = $(SRCS:.c=.o)
