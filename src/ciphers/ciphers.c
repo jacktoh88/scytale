@@ -10,7 +10,7 @@ bool encrypt(cipher_t *cipher){
         return encrypt_polybius(cipher);
     }
     else if(!strcmp(cipher->name, "Vigenere")){
-
+        return encrypt_vigenere(cipher);
     }
     else {
         return false;
@@ -25,7 +25,7 @@ bool decrypt(cipher_t *cipher){
         return decrypt_polybius(cipher);
     }
     else if(!strcmp(cipher->name, "Vigenere")){
-
+        return decrypt_vigenere(cipher);
     }
     else {
         return false;
