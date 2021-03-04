@@ -7,7 +7,7 @@ bool encrypt(cipher_t *cipher){
         return encrypt_caesar(cipher);
     }
     else if(!strcmp(cipher->name, "Polybius")){
-
+        return encrypt_polybius(cipher);
     }
     else if(!strcmp(cipher->name, "Vigenere")){
 
@@ -22,7 +22,7 @@ bool decrypt(cipher_t *cipher){
         return decrypt_caesar(cipher);
     }
     else if(!strcmp(cipher->name, "Polybius")){
-
+        return decrypt_polybius(cipher);
     }
     else if(!strcmp(cipher->name, "Vigenere")){
 
