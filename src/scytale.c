@@ -64,8 +64,7 @@ error_t parse_opt(int key, char *arg, struct argp_state *state) {
         case 'k':
             break;
         default:
-            printf("Argument not recognized: %s\n", arg);
-            break;
+            return ARGP_ERR_UNKNOWN;
     }   
     return 0;
 }

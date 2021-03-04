@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
 
 typedef struct {
     char* name;
@@ -17,7 +18,7 @@ typedef struct {
 bool encrypt(cipher_t *cipher);
 bool decrypt(cipher_t *cipher);
 
-bool encrypt_casear(cipher_t *cipher);
+bool encrypt_caesar(cipher_t *cipher);
 bool encrypt_polybius(cipher_t *cipher);
 bool encrypt_vigenere(cipher_t *cipher);
 
