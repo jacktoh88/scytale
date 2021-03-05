@@ -15,6 +15,7 @@ char output_filename[100] = {0};
 char key_filename[100] = {0};
 
 cipher_t cipher;
+bool encrypt_mode;
 
 const static struct argp_option options[] = { 
     { 
@@ -80,6 +81,12 @@ error_t parse_opt(int key, char *arg, struct argp_state *state) {
         case 'o':
             strncpy(output_filename, arg, sizeof(output_filename));
             break;
+        case 'e':
+            encrypt_mode = true;
+            break;
+        case 'd':
+            encrypt_mode = false;
+            break;
         default:
             return ARGP_ERR_UNKNOWN;
     }   
@@ -125,6 +132,20 @@ int main(int argc, char* argv[]){
     }
     cipher.input = input_data;
 
-    fclose(key_filename);
+    fclose(input_fp);
+    fclose(key_fp);
+
+    if(encrypt_mode){
+        if(!encrypt(&cipher)){
+            printf("Error during encryption\n");
+            return 1;
+        }
+    }
+    else {
+        if(!decrypt(&cipher)){
+            printf("Error during decryption\n");
+            return 1;
+        }
+    }
 
 }
