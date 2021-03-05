@@ -135,6 +135,7 @@ int main(int argc, char* argv[]){
     fclose(input_fp);
     fclose(key_fp);
 
+    // Encrypt or decrypt input, depending on what was requested
     if(encrypt_mode){
         if(!encrypt(&cipher)){
             printf("Error during encryption\n");
@@ -148,4 +149,16 @@ int main(int argc, char* argv[]){
         }
     }
 
+    // Write output to file
+    FILE* output_fp = fopen(output_filename, "w");
+    if(!output_fp){
+        printf("Error opening output file\n");
+        return 1;
+    }
+
+    if(cipher.output_size != fwrite(cipher.output, 1, cipher.output_size, output_fp)){
+        printf("Error writing output file\n");
+    }
+
+    fclose(output_fp);
 }
