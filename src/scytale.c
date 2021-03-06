@@ -167,6 +167,11 @@ int main(int argc, char* argv[]){
     fclose(input_fp);
     fclose(key_fp);
 
+    // Set output data to a max of the input size
+    uint8_t output_data[MAX_INPUT_LEN];
+    cipher.output_size = cipher.input_size;
+    cipher.output = output_data;
+
     // Encrypt or decrypt input, depending on what was requested
     if(encrypt_mode){
         if(!encrypt(&cipher)){
