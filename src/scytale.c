@@ -51,6 +51,38 @@ const static struct argp_option options[] = {
         .arg = "key",
         .doc = "Path to file containing key"
     },
+    {
+        .name = "input file",
+        .key = 'i',
+        .flags = 0,
+        .group = 0,
+        .arg = "input",
+        .doc = "Path to file containing input"
+    },
+    {
+        .name = "output file",
+        .key = 'o',
+        .flags = 0,
+        .group = 0,
+        .arg = "output",
+        .doc = "Path to file to contain output"
+    },
+    {
+        .name = "encrypt",
+        .key = 'e',
+        .flags = OPTION_ARG_OPTIONAL,
+        .group = 0,
+        .arg = NULL,
+        .doc = "Encrypt mode"
+    },
+    {
+        .name = "output file",
+        .key = 'd',
+        .flags = OPTION_ARG_OPTIONAL,
+        .group = 0,
+        .arg = NULL,
+        .doc = "Path to file to contain output"
+    },
     { 0 } 
 };
 
