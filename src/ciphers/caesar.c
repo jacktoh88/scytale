@@ -2,9 +2,9 @@
 #include <ciphers.h>
 
 bool encrypt_caesar(cipher_t *cipher){
-    // The key for the caesar cipher is just one byte maximum
+    // The key for the caesar cipher is just one byte
     uint8_t key = *(cipher->key);
-    if(cipher->key_size != 1){
+    if(cipher->key_size < 1){
         return false;
     }
     else if (cipher->input_size != cipher->output_size){
@@ -19,9 +19,9 @@ bool encrypt_caesar(cipher_t *cipher){
 }
 
 bool decrypt_caesar(cipher_t *cipher){
-    // The key for the caesar cipher is just one byte maximum
+    // The key for the caesar cipher is just one byte
     uint8_t key = *(cipher->key);
-    if(cipher->key_size != 1){
+    if(cipher->key_size < 1){
         return false;
     }
     else if (cipher->input_size != cipher->output_size){
