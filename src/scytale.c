@@ -24,7 +24,7 @@ const static struct argp_option options[] = {
         .flags = OPTION_ARG_OPTIONAL,
         .group = 0,
         .arg = NULL,
-        .doc = "Compare lines instead of characters."
+        .doc = "Use the caesar cipher"
     },
     {
         .name = "polybius",
@@ -32,7 +32,7 @@ const static struct argp_option options[] = {
         .flags = OPTION_ARG_OPTIONAL,
         .group = 0,
         .arg = NULL,
-        .doc = ""
+        .doc = "Use the polybius cipher"
 
     },
     {
@@ -41,7 +41,7 @@ const static struct argp_option options[] = {
         .flags = OPTION_ARG_OPTIONAL,
         .group = 0,
         .arg = NULL,
-        .doc = "Compare case insensitive instead of case sensitive."
+        .doc = "Use the vigenere cipher"
     },
     {
         .name = "key",
