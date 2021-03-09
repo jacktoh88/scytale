@@ -167,8 +167,9 @@ int main(int argc, char* argv[]){
     fclose(input_fp);
     fclose(key_fp);
 
-    // Set output data to a max of the input size
-    uint8_t output_data[MAX_INPUT_LEN];
+    // Set output data to a max of the 2x input size
+    // in order to have room for polybius cipher
+    uint8_t output_data[MAX_INPUT_LEN * 2];
     cipher.output_size = cipher.input_size;
     cipher.output = output_data;
 

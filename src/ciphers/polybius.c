@@ -19,14 +19,16 @@ void setup_encryption_lookup(){
 void setup_decryption_lookup(){
     for(int i = 0; i < 16; i++){
         for(int j = 0; j < 16; j++){
-            decryption_lookup[i][j] = (i*j) + j;
+            decryption_lookup[i][j] = (i*16) + j;
         }
+        printf("\n");
     }
 }
 
 // Ignoring key for both encryption and decryption
 // Instead using precalculated key look up tables
 bool encrypt_polybius(cipher_t *cipher){
+    setup_encryption_lookup();
     // Output will by 2x input because each byte is transformed into 2
     if (cipher->input_size != cipher->output_size / 2){
         return false;
@@ -41,6 +43,7 @@ bool encrypt_polybius(cipher_t *cipher){
 }
 
 bool decrypt_polybius(cipher_t *cipher){
+    setup_decryption_lookup();
     // Output will by 1/2 input because evyer two bytes are reduced into 1
     if (cipher->input_size != cipher->output_size * 2){
         return false;
